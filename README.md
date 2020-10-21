@@ -8,7 +8,7 @@ A Python script to find over-represented annotations (GO, KEGG, etc.) in a subse
 
 \# Running over-repressentated analysis for the provided example (use $'\\t' for tab-delimiters):
 
-**python overrep.py -i ./Example_files/Aratha_interesting.list -b ./Example_files/Aratha_background.list -g ./Example_files/Aratha_gene2go_with_parents.txt -gd $'\t' -ad ',' -s ./Example_files/GO_descriptions.txt -sd $'\t'-a GO_term > analysis.log** # Analyses usually finish within one minute...
+**python overrep.py -i ./Example_files/Aratha_interesting.list -b ./Example_files/Aratha_background.list -g ./Example_files/Aratha_gene2go_with_parents.txt -gd $'\t' -ad ',' -s ./Example_files/GO_descriptions.txt -sd $'\t' -a GO_term > analysis.log** # Analyses usually finish within one minute...
 
 ###Dependencies:
 - Python (https://www.python.org/downloads/)

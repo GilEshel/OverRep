@@ -1,5 +1,5 @@
 # OverRep
-A Python script to find over-represented annotations (GO, KEGG, etc.) in a subset of interesting features (e.g. genes).
+A simple and flexable Python program to find over-represented annotations (GO, KEGG, etc.) in a subset of interesting features (e.g. genes).
 
 ## Running OverRep
 \# You can invoke the help option to see all required and optional arguments:

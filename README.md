@@ -15,7 +15,7 @@ A Python script to find over-represented annotations (GO, KEGG, etc.) in a subse
 - SciPy (https://scipy.org/install.html). 'pip install scipy' worked for me.
 - I only tested this program on Mac and Linux (Not sure if works on Windows - let me know...)
 
-### Some notes before we start
+### Some notes before you start
 1. Examples for input and output files can be found in the Example_files folder.
 2. The features **do not** have to be genes: They can be anything that you like, the script just need a unique id (i.e. a string) for each feature. At least some of these features need to have at least one assigned annotation. Features can be genes, ortholog groups, etc.
 3. Annotations **do not** have to be GO terms: They can be anything that you like, as long as you provide a list of annotation ids per feature (can be 'NA'). Avoid having spaces within annotation ids, probably will cause problems. Examples for common annotations are GO terms, KEGG ids, InterPro ids, etc. Again you can generate your own annotations and test for overrepressentation, It is very flexable. 

@@ -16,7 +16,7 @@ A Python script to find over-represented annotations (GO, KEGG, etc.) in a subse
 - I only tested this program on Mac and Linux (Not sure if works on Windows - let me know...)
 
 ### Some notes before we start
-1. Example files for input 
+1. Examples for input and output files can be found in the Example_files folder
 2. The features **do not** have to be genes: They can be anything that you like, the script just need a unique id (i.e. a string) for each feature. At least some of these features need to have at least one assigned annotation. Features can be genes, ortholog groups, etc.
 3. Annotations **do not** have to be GO terms: They can be anything that you like, as long as you provide a list of annotation ids per feature (can be 'NA'). Avoid having spaces within annotation ids, probably will cause problems. Examples for common annotations are GO terms, KEGG ids, InterPro ids, etc. Again you can generate your own annotations and test for overrepressentation, It is very flexable. 
 4. Currently, you have to provide an annotation description file. First column will be the annotation id (e.g. GO:0006950) and second column will be a short description (e.g. response to stress). This is added to the output table. For GO terms, using the utility add_parent_GOs.py will generate the GO description file. If you don't have one for your annotation, you can modify the code to avoid it (or you can write an issue and I will add that option...)

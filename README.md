@@ -10,7 +10,7 @@ A simple and flexable Python program to find over-represented annotations (GO, K
 
 **python overrep.py -i ./Example_files/Aratha_interesting.list -b ./Example_files/Aratha_background.list -g ./Example_files/Aratha_gene2go_with_parents.txt -gd $'\t' -ad ',' -s ./Example_files/GO_descriptions.txt -sd $'\t' -a GO_term > analysis.log** # Analyses usually finish within one minute...
 
-###Dependencies:
+### Dependencies:
 - Python (https://www.python.org/downloads/)
 - SciPy (https://scipy.org/install.html). 'pip install scipy' worked for me.
 - I only tested this program on Mac and Linux (Not sure if works on Windows - let me know...)

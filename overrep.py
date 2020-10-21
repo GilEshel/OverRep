@@ -210,9 +210,9 @@ def main():
 	print('Parsed ' + str(args.annot_description_file) + ' file')
 	#
 	#
-	print('Starting enrichment analysis')
+	print('Starting overrepresentation analysis')
 	#
-	### Start the enrichment analysis ###
+	### Start the overrepresentation analysis ###
 	#
 	## Get background and interesting genes annotation counts
 	#
@@ -264,8 +264,8 @@ def main():
 		annot_id_p_adj[a] = float(adj_pval[pos])
 		results[a] = results[a] + '\t' + str(adj_pval[pos]) + '\t' + ';'.join(annot_id_interesting_gene_ids_dict[a])
 		pos = pos + 1	
-	num_enriched_terms_pos = sum(i <= 0.05 for i in adj_pval)  
-	print('Generating enrichment table: ' + str(num_enriched_terms_pos) + ' enriched (p-adj <= 0.05) ' + str(args.annotation_type) + 's were identified')
+	num_overrepresented_terms_pos = sum(i <= 0.05 for i in adj_pval)  
+	print('Generating overrepresentation table: ' + str(num_overrepresented_terms_pos) + ' overrepresented (p-adj <= 0.05) ' + str(args.annotation_type) + 's were identified')
 	#
 	### Sort GOs by the p-val (lowest to highest) and filter by p-adj <= 0.05, p-val <= 0.05 and p-val <= 0.01
 	annot_id_p_val_sorted_top = sorted(annot_id_p_val.items(), key = lambda kv:(kv[1], kv[0]))
@@ -276,27 +276,27 @@ def main():
 	annot_ids_sorted_by_p_val_below_0_1 = [i[0] for i in annot_id_p_val_sorted_top if i[1] <= 0.01]
 	annot_ids_sorted_by_p_adj_below_0_5 = [i[0] for i in annot_id_p_val_sorted_top if annot_id_p_adj[i[0]] <= 0.05] # keeping the order by p-val for consistency...
 	#
-	### Save enrichment tables:
-	# Save the full sorted enrichment table (without adj_pval filtering)
-	with open(args.interesting_gene_file.rsplit('.',1)[0] + '_' + str(args.annotation_type) + '_enrichment_table.txt' ,'w') as enrich_table:
+	### Save overrepresentation tables:
+	# Save the full sorted overrepresentation table (without adj_pval filtering)
+	with open(args.interesting_gene_file.rsplit('.',1)[0] + '_' + str(args.annotation_type) + '_overrepresentation_table.txt' ,'w') as enrich_table:
 		enrich_table.write('annotid' + '\t' + 'AnnotDesc' + '\t' + 'Interesting_genes_with_this_annotid' + '\t' + 'Interesting_genes_with_any_annotation' + '\t' + 'BG_with_annotid' + '\t' + 'BG_with_any_annotation' + '\t' + 'pvalue' + '\t' + 'p_adj_BH' + '\t' + 'Interesting_gene_ids' + '\n')
 		for an in annot_ids_sorted_by_p_val:
 			enrich_table.write(results[an] + '\n')
 	#
-	# Save the filtered enrichment table (adj_pval <= 0.05):
-	with open(args.interesting_gene_file.rsplit('.',1)[0] + '_' + str(args.annotation_type) + '_enrichment_table_padj_0_05.txt' ,'w') as filt_enrich_table1:
+	# Save the filtered overrepresentation table (adj_pval <= 0.05):
+	with open(args.interesting_gene_file.rsplit('.',1)[0] + '_' + str(args.annotation_type) + '_overrepresentation_table_padj_0_05.txt' ,'w') as filt_enrich_table1:
 		filt_enrich_table1.write('annotid' + '\t' + 'AnnotDesc' + '\t' + 'Interesting_genes_with_this_annotid' + '\t' + 'Interesting_genes_with_any_annotation' + '\t' + 'BG_with_annotid' + '\t' + 'BG_with_any_annotation' + '\t' + 'pvalue' + '\t' + 'p_adj_BH' + '\t' + 'Interesting_gene_ids' + '\n')
 		for f1 in annot_ids_sorted_by_p_adj_below_0_5:
 			filt_enrich_table1.write(results[f1] + '\n')
 	#
-	# Save the filtered enrichment table (pval <= 0.05):
-	with open(args.interesting_gene_file.rsplit('.',1)[0] + '_' + str(args.annotation_type) + '_enrichment_table_pval_0_05.txt' ,'w') as filt_enrich_table2:
+	# Save the filtered overrepresentation table (pval <= 0.05):
+	with open(args.interesting_gene_file.rsplit('.',1)[0] + '_' + str(args.annotation_type) + '_overrepresentation_table_pval_0_05.txt' ,'w') as filt_enrich_table2:
 		filt_enrich_table2.write('annotid' + '\t' + 'AnnotDesc' + '\t' + 'Interesting_genes_with_this_annotid' + '\t' + 'Interesting_genes_with_any_annotation' + '\t' + 'BG_with_annotid' + '\t' + 'BG_with_any_annotation' + '\t' + 'pvalue' + '\t' + 'p_adj_BH' + '\t' + 'Interesting_gene_ids' + '\n')
 		for f2 in annot_ids_sorted_by_p_val_below_0_5:
 			filt_enrich_table2.write(results[f2] + '\n')
 	#
-	# Save the filtered enrichment table (pval <= 0.01):
-	with open(args.interesting_gene_file.rsplit('.',1)[0] + '_' + str(args.annotation_type) + '_enrichment_table_pval_0_01.txt' ,'w') as filt_enrich_table3:
+	# Save the filtered overrepresentation table (pval <= 0.01):
+	with open(args.interesting_gene_file.rsplit('.',1)[0] + '_' + str(args.annotation_type) + '_overrepresentation_table_pval_0_01.txt' ,'w') as filt_enrich_table3:
 		filt_enrich_table3.write('annotid' + '\t' + 'AnnotDesc' + '\t' + 'Interesting_genes_with_this_annotid' + '\t' + 'Interesting_genes_with_any_annotation' + '\t' + 'BG_with_annotid' + '\t' + 'BG_with_any_annotation' + '\t' + 'pvalue' + '\t' + 'p_adj_BH' + '\t' + 'Interesting_gene_ids' + '\n')
 		for f3 in annot_ids_sorted_by_p_val_below_0_1:
 			filt_enrich_table3.write(results[f3] + '\n')

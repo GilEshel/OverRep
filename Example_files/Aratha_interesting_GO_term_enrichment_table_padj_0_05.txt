@@ -1,1 +1,0 @@
-annotid	AnnotDesc	Interesting_genes_with_this_annotid	Interesting_genes_with_any_annotation	BG_with_annotid	BG_with_any_annotation	pvalue	p_adj_BH	Interesting_gene_ids

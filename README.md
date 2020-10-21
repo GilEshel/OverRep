@@ -20,7 +20,9 @@ A simple and flexable Python program to find over-represented annotations (GO, K
 2. The features **do not** have to be genes: They can be anything that you like, the script just need a unique id (i.e. a string) for each feature. At least some of these features need to have at least one assigned annotation. Features can be genes, ortholog groups, etc.
 3. Annotations **do not** have to be GO terms: They can be anything that you like, as long as you provide a list of annotation ids per feature (can be 'NA'). Avoid having spaces within annotation ids, probably will cause problems. Examples for common annotations are GO terms, KEGG ids, InterPro ids, etc. You can also create your own annotations and test for overrepressentation, It is very flexable. 
 4. Currently, you have to provide an annotation description file. First column will be the annotation id (e.g. GO:0006950) and second column will be a short description (e.g. response to stress). This is added to the output table. For GO terms, using the utility add_parent_GOs.py will generate the GO description file. If you don't have one for your annotation, you can modify the code to avoid it (or you can write an issue and I will add that option...).
-5. For GO term overrepressentation analysis, you should make sure your gene2GO annotation file include also the parental GO terms for the assigned GO terms. Since some genes will be annotated with more deeper level GO terms, and some with higher levels, we want to make sure we count all the genes for each GO term. Use the utility add_parent_GOs.py to achive that:
+
+### Adding parental GO terms:
+For GO term overrepressentation analysis, you should make sure your gene2GO annotation file includes also the parental GO terms for the assigned GO terms. Since some genes will be annotated with more deeper level GO terms, and some with higher levels, we want to make sure we are counting all the genes for a given GO term. Use the utility add_parent_GOs.py to achive that:
 
 \# Use the help option to see all input arguments:
 

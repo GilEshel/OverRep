@@ -1,0 +1,13 @@
+Loaded input arguments
+Loaded script functions
+Parsed ./Example_files/Aratha_interesting.list file
+Parsed ./Example_files/Aratha_background.list file
+Parsed ./Example_files/Aratha_gene2go_with_parents.txt file
+Parsed ./Example_files/GO_descriptions.txt file
+Starting enrichment analysis
+There are 27591 genes with a GO_term annotation in the background list
+There are 9594 GO_terms with at least one gene count in the background
+There are 252 genes with a GO_term annotation in the list of interesting genes
+There are 1685 GO_terms with at least one gene count in the list of interesting genes
+Running BH FDR correction
+Generating enrichment table: 0 enriched (p-adj <= 0.05) GO_terms were identified

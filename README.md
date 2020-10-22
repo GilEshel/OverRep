@@ -54,7 +54,7 @@ For GO term overrepresentation analysis, you should make sure your gene2GO annot
 - It needs a short string to add to output file names (-o), for your records, and so that you can run multiple comarisons without overwritting the output files. Default = '10_top_expressed' (I was looking at 10% top expressed genes. It should reflect the way the genes of interest were selected for the original annotation overrepresentation analysis...).
 - Lastly it needs the type of annotation (-a), to add to output file names and columns. Default = 'GO_Term'.
 
-#### I was using these scripts and many others for my own research, and thought it might be useful for others. I haven't tested these scripts under different environments, so I can't guarantee that they will work. If you are getting truble, and cann't figure the code, please post an issue, and hopefully I can help you.
+#### I was using these scripts and many others for my own research, and thought it might be useful for others. I haven't tested these scripts under different environments, so I can't guarantee that they will work. If you are getting troubles, and can't figure out the code, please post an issue, and hopefully I can help you.
 
 
 **Cheers,**

@@ -1,0 +1,7 @@
+Among	Ammopiptanthus mongolicus
+Atrif	Ambrosia trifida
+Bdact	Bouteloua dactyloides
+Bsylv	Brachypodium sylvaticum
+Casia	Centella asiatica
+Dangu	Deyeuxia angustifolia
+Eglab	Echinochloa glabrescens

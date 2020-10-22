@@ -227,7 +227,7 @@ def main():
 			out_mat = out_mat + '\n'
 	#
 	# Save the Species GO overrepresentation matrix:
-	mat_out_name = 'Species_' + str(args.output_string) + '_GO_overrepresentation_matrix_for_' + significance_type + '_' + str(significance_thresh).replace('.','_') + '.txt'
+	mat_out_name = 'Species_' + str(args.output_string) + '_'  + str(args.annotation_type) + '_overrepresentation_matrix_for_' + significance_type + '_' + str(significance_thresh).replace('.','_') + '.txt'
 	with open(mat_out_name,'w') as MatFile:
 		MatFile.write(out_mat)
 	#
@@ -248,7 +248,7 @@ def main():
 	for j in range(len(list(out_p_val_sorted_top))):
 		out = out + out_p_val_sorted_top[j][1]['line']
 	#
-	fisher_table_out_name = 'Atacama_sister_' + str(args.output_string) + '_overrepresented_GO_terms_Fisher_Exact_for_' + significance_type + '_' + str(significance_thresh).replace('.','_') + '.txt'
+	fisher_table_out_name = 'Between_groups_overrepresented_annotations_comparison_' + str(args.output_string) + '_Fisher_Exact_for_' + significance_type + '_' + str(significance_thresh).replace('.','_') + '.txt'
 	with open(fisher_table_out_name,'w') as FisherTable:
 		FisherTable.write(out)
 

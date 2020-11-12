@@ -221,16 +221,16 @@ def main():
 	num_genes_with_annot_universe = len(gene_to_annot_dict_background_genes)
 	universe_annot_ids = sum(list(gene_to_annot_dict_background_genes.values()),[])	# Get all annotation ids for the background genes
 	universe_annot_id_frequencies = dict(Counter(universe_annot_ids))	# For every unique annotation id, record the frequency in the background
-	print('There are ' + str(num_genes_with_annot_universe) + ' (out of ' + str(len(background_genes)) + ') genes with a ' + str(args.annotation_type) + ' annotation in the background list')
-	print('There are ' + str(len(universe_annot_id_frequencies)) + ' ' + str(args.annotation_type) + 's with at least one gene count in the background')
+	print('There are ' + str(num_genes_with_annot_universe) + ' (out of ' + str(len(background_genes)) + ') genes with a ' + str(args.annotation_type).replace('_', ' ') + ' annotation in the background list')
+	print('There are ' + str(len(universe_annot_id_frequencies)) + ' ' + str(args.annotation_type).replace('_', ' ') + 's with at least one gene count in the background')
 	#
 	# Genes of interest:
 	gene_to_annot_dict_interesting_genes = { your_key: gene_to_annot_dict[your_key] for your_key in interesting_genes if your_key in gene_to_annot_dict }
 	num_of_interesting_genes_with_annot = len(gene_to_annot_dict_interesting_genes)
 	interesting_annot_ids = sum(list(gene_to_annot_dict_interesting_genes.values()),[])	# Get all annotation ids for the interesting genes
 	interesting_annot_id_frequencies = dict(Counter(interesting_annot_ids))	# For every unique annotation id, record the frequency in the genes of interest
-	print('There are ' + str(num_of_interesting_genes_with_annot) + ' (out of ' + str(len(interesting_genes)) + ') genes with a ' + str(args.annotation_type) + ' annotation in the list of interesting genes')
-	print('There are ' + str(len(interesting_annot_id_frequencies)) + ' ' + str(args.annotation_type) + 's with at least one gene count in the list of interesting genes')
+	print('There are ' + str(num_of_interesting_genes_with_annot) + ' (out of ' + str(len(interesting_genes)) + ') genes with a ' + str(args.annotation_type).replace('_', ' ') + ' annotation in the list of interesting genes')
+	print('There are ' + str(len(interesting_annot_id_frequencies)) + ' ' + str(args.annotation_type).replace('_', ' ') + 's with at least one gene count in the list of interesting genes')
 	#
 	annot_id_interesting_gene_ids_dict = {}	# Record the ids of interesting genes having a particular annotation id
 	for i in list(gene_to_annot_dict_interesting_genes.keys()):
